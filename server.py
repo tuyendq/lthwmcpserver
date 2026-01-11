@@ -1,13 +1,18 @@
 from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
-mcp = FastMCP("MySimpleServer")
+mcp = FastMCP("MyFirstMCPServer")
 
 # Add a Tool: Something the AI can 'do'
-@mcp.tool():
+@mcp.tool()
 def add_number(a: int, b: int) -> int:
     """Add two numbers together"""
     return a + b
+
+@mcp.tool()
+def multiply_number(a: int, b: int) -> int:
+    """Multiply two numbers together"""
+    return a * b
 
 # Add a Resource: Data the AI can 'read'
 @mcp.resource("echo://greeting")
