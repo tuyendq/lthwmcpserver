@@ -1,7 +1,7 @@
-from fastmcp import FastMCPServer
+from fastmcp import FastMCP
 import datetime
 
-mcp = FastMCPServer("Catering MCP Server")
+mcp = FastMCP("Catering MCP Server")
 
 @mcp.tool()
 def get_current_menu() -> str:
