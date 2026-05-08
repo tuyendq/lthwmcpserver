@@ -45,3 +45,6 @@ def convert_currency(amount: float, from_currency: str, to_currency: str) -> str
 print("Testing Currency Converter:")
 result = convert_currency(amount=100, from_currency="USD", to_currency="EUR")
 print(result)
+
+if __name__ == "__main__":
+    mcp.run()
