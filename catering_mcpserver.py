@@ -24,3 +24,7 @@ def create_catering_order(customer_name: str, menu_item: str, quantity: int, del
     if not check_availability(delivery_date):
         return "Delivery date is not available."
     return f"Order created for {customer_name}: {quantity} x {menu_item} for delivery on {delivery_date}."
+
+if __name__ == "__main__":
+    mcp.run()
+    
