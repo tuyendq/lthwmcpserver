@@ -25,6 +25,22 @@ def create_catering_order(customer_name: str, menu_item: str, quantity: int, del
         return "Delivery date is not available."
     return f"Order created for {customer_name}: {quantity} x {menu_item} for delivery on {delivery_date}."
 
+@mcp.tool()
+def check_stock(item: str, quantity: int) -> str:
+    """Check if the specified quantity of the item is in stock"""
+    # In a real implementation, this would check inventory levels in a database
+    stock = {
+        "Grilled Chicken": 50,
+        "Caesar Salad": 30,
+        "Chocolate Cake": 20,
+        "apple": 100,
+    }
+    available_quantity = stock.get(item, 0)
+    if available_quantity >= quantity:
+        return f"{quantity} x {item} is available in stock."
+    else:
+        return f"Only {available_quantity} x {item} is available in stock."
+
 if __name__ == "__main__":
     mcp.run()
     
